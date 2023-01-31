@@ -20,10 +20,10 @@ RUN go build -o app .
 WORKDIR /opt/aiip/mock-fusion
 
 # 将二进制文件从 /build 目录复制到这里
-RUN cp /opt/aiip/mock-fusion/app .
+#RUN cp /opt/aiip/mock-fusion/app .
 
 # 声明服务端口
-EXPOSE 28888
+EXPOSE 38888
 
 # 启动容器时运行的命令
 CMD ["/opt/aiip/mock-fusion/app"]

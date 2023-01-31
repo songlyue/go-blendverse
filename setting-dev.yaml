@@ -1,6 +1,6 @@
 server:
   name: "blendverse"
-  port: "28888"
+  port: "38888"
   logAddress: "./logs/"
 
 pgsql:

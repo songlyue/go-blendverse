@@ -33,7 +33,7 @@ func NacosInit() {
 
 	success, err := namingClient.RegisterInstance(vo.RegisterInstanceParam{
 		Ip:          "192.168.3.248",
-		Port:        28888,
+		Port:        38888,
 		ServiceName: "mock-fusion-server",
 		Weight:      10,
 		Enable:      true,
