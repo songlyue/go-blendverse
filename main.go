@@ -5,6 +5,8 @@ import (
 	"blendverse/global"
 	"blendverse/initialize"
 	"blendverse/router"
+	"blendverse/websocket"
+	webRouter "blendverse/websocket/router"
 	"fmt"
 )
 
@@ -27,6 +29,11 @@ func main() {
 		panic(err)
 	}
 	// 路由
+
+	// webSocket 注册
+	go websocket.StartWebSocket()
+	webRouter.WebSocketInit()
+
 	r := router.Router()
 	global.GVA_LOG.Info("服务启动成功,%s")
 	r.Run(fmt.Sprintf(":%s", global.GVA_CONFIG.Server.Port))

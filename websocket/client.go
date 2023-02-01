@@ -51,6 +51,7 @@ func (c *Client) read() {
 			return
 		}
 		// 处理程序
+		ProcessData(c, message)
 	}
 
 }
@@ -80,4 +81,17 @@ func (c *Client) write() {
 		}
 	}
 
+}
+
+// SendMsg 发送信息
+func (c *Client) SendMsg(msg []byte) {
+	if c == nil {
+		return
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Send msg err")
+		}
+	}()
+	c.Send <- msg
 }
